@@ -1,0 +1,44 @@
+{
+    "name": "FondDocument",
+    "fields": [
+        {
+            "fieldName": "denominationAr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "denominationFr",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "pattern"
+            ],
+            "fieldValidateRulesPattern": "[A-Z]+"
+        },
+        {
+            "fieldName": "formatPj",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reference",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "typesContenu",
+            "otherEntityName": "typeDeContenu",
+            "otherEntityRelationshipName": "fondDocument"
+        }
+    ],
+    "changelogDate": "20180718125401",
+    "entityTableName": "fond_document",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "edoc",
+    "microserviceName": "offreContrat"
+}

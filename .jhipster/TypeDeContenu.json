@@ -1,0 +1,50 @@
+{
+    "name": "TypeDeContenu",
+    "fields": [
+        {
+            "fieldName": "denominationAr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "denominationFr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reference",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 5,
+            "fieldValidateRulesMaxlength": 10
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "fondDocument",
+            "otherEntityName": "fondDocument",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180718125402",
+    "entityTableName": "type_de_contenu",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "edoc",
+    "microserviceName": "offreContrat"
+}
