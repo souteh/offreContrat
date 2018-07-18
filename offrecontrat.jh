@@ -1,0 +1,32 @@
+
+entity FondDocument {
+	denominationAr String,
+    denominationFr String pattern(/[A-Z]+/),
+    formatPj String,
+	reference String,
+}
+
+entity TypeDeContenu {
+	denominationAr String 
+    denominationFr String
+    reference String required minlength(5) maxlength(10),
+    code String required,
+}
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	FondDocument{typesContenu}  to TypeDeContenu
+}
+
+
+// Set pagination options
+paginate FondDocument with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with edoc
