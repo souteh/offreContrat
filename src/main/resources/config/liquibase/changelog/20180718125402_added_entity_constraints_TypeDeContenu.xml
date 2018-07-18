@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity TypeDeContenu.
+    -->
+    <changeSet id="20180718125402-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fond_document_id"
+                                 baseTableName="type_de_contenu"
+                                 constraintName="fk_type_de_contenu_fond_document_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fond_document"/>
+
+    </changeSet>
+</databaseChangeLog>
